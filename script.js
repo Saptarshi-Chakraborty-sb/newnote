@@ -11,7 +11,7 @@ let GlobalArray;
 addBtn.addEventListener("click", () => {
     console.log("Addbtn fired");
     itemBox.style.transition = "2s";
-    let url = `http://localhost/note/create.php?title=${ftitle.value}&desc=${fdesc.value}`;
+    let url = `http://newnote.rf.gd/create.php?title=${ftitle.value}&desc=${fdesc.value}`;
     fetch(url).then((res) => {
         console.log("First.then");
         return res.json();
@@ -34,7 +34,7 @@ function clearForm() {
 
 
 function getData() {
-    let url = `http://localhost/note/sonu.php?auth=ajdshuihdaskbjhiasd`;
+    let url = `http://newnote.rf.gd/sonu.php?auth=ajdshuihdaskbjhiasd`;
     fetch(url).then((res) => {
         return res.text();
     }).then((data) => {
@@ -61,7 +61,7 @@ function getData() {
 function delNote(index = 9) {
     console.log(index);
     let data = index;
-    let url = `http://localhost/note/del.php?auth=ajdshuihdaskbjhiasd&data=${data}`;
+    let url = `http://newnote.rf.gd/del.php?auth=ajdshuihdaskbjhiasd&data=${data}`;
     itemBox.innerText = "";
     fetch(url, { method: 'post' }).then((res) => {
         return res.text();
